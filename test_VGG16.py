@@ -60,12 +60,12 @@ class VGG16(nn.Module):
         )
 
         self.classifier = nn.Sequential(
-            nn.Dropout(),
             nn.Linear(512 * 1 * 1, 4096),
             nn.ReLU(),
             nn.Dropout(),
             nn.Linear(4096, 4096),
             nn.ReLU(),
+            nn.Dropout(),
             nn.Linear(4096, num_classes)
         )
 
